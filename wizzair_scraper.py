@@ -2,9 +2,10 @@ import requests
 import re
 from iata import iata_codes, dest_graph
 from scraper import Page
+from bs4 import BeautifulSoup
 
 class WizzairPage(Page):		
-	def get_relations(start):
+	def get_relations(self, start):
 		return next([x["SC"] for x in entry["ASL"]] for entry in dest_graph if entry["DS"] == start)
 
 	def get_carrier(self):
@@ -42,7 +43,7 @@ class WizzairPage(Page):
 		}
 
 		r = requests.post("http://wizzair.com/pl-PL/Search", headers=headers, cookies=cookies, data=payload)
-		return self.parse_search_doc(r.content)
+		return self.parse_search_doc(r.text)
 
 	def parse_sticky_head(self, sticky_head):
 		#direction = stickyHead.find("h2")
@@ -58,7 +59,7 @@ class WizzairPage(Page):
 			fare_span = flight_tooltip.find("span", {"class": "flight-fare"})
 			price = fare_span.find("span", {"class":"original"}).string
 
-			results.append( { "departure":departure, "arrival": arrival, "price": price} )
+			results.append( { "departure":departure, "arrival": arrival, "price": price.split()[0].replace(",", ".")} )
 		return results
 
 	def parse_search_doc(self, html_doc):
@@ -68,11 +69,15 @@ class WizzairPage(Page):
 		city_from = soup.find("input", {"class": "city-from"})["value"]
 		table = soup.find('div', {"class": "price-table"})
 		sticky_heads = table.find_all("div", {"class": "stickyHead"})
+		price_header = sticky_heads[0].find("span", {"class":"flight-fare"}).string
+		
+		found = re.findall("Cena.*\((.*)\)", price_header, re.DOTALL)
 
 		return {
 			"from" : city_from,
 			"to" : city_to,
 			
 			"first": self.parse_sticky_head(sticky_heads[0]),
-			"second":  self.parse_sticky_head(sticky_heads[1])
+			"second":  self.parse_sticky_head(sticky_heads[1]),
+			"currency":found[0]
 		}
