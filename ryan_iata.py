@@ -3219,3 +3219,6 @@ route_data = {
 		"invalid_number_of_passengers" : "We’re sorry, but the number of passengers you have chosen cannot be booked online. We allow a maximum of 25 passengers per booking. If your group is larger than this, or if you want to book a greater number of infants than adults, please contact our reservation centre for further help with your booking"
 	}
 }
+
+def get_relations(city):
+	return route_data["routes"][city] if city in route_data["routes"] else []

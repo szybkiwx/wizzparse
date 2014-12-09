@@ -1,4 +1,4 @@
-from ryan_iata import route_data
+from ryan_iata import route_data, get_relations
 from scraper import Page
 import requests
 import sys
@@ -19,17 +19,19 @@ requests_log.setLevel(logging.DEBUG)
 requests_log.propagate = True"""
 
 class RyanPage(Page):
-	def __init__(self):
+	def __init__(self, runner):
 		self._session_id = None
-
+		Page.__init__(self, runner)
+		
 	def get_carrier(self):
-		return "RyainAir"
+		return "RyanAir"
 		
 	def _find_airport_name(self, city):
+		print city
 		next(x["name"] for x in route_data["airports"] if x["iataCode"] ==  city)
 
 	def get_relations(self, city):
-		return route_data["routes"][city]
+		return get_relations(city)
 	
 	def get_flights(self, origin, destination, departure_date, return_date):
 		logger.info("downloading: %s -> %s" %( origin, destination))
