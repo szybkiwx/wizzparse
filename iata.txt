@@ -1,0 +1,563 @@
+TIA	Tirana	Albania
+EVN	Yerevan	Armenia
+GRZ	Graz	Austria
+INN	Innsbruck	Austria
+KLU	Klagenfurt	Austria
+LNZ	Linz	Austria
+SZG	Salzburg	Austria
+VIE	Vienna	Austria
+GYD	Baku	Azerbaijan
+KVD	Ganja	Azerbaijan
+NAJ	Nakhchivan	Azerbaijan
+MSQ	Minsk2	Belarus
+ANR	Antwerp	Belgium
+BRU	Brussels	Belgium
+CRL	Charleroi	Belgium
+LGG	Liege	Belgium
+BNX	BanjaLuka	Bosnia and Herzegovina
+SJJ	Sarajevo	Bosnia and Herzegovina
+BOJ	Bourgas	Bulgaria
+SOF	Sofia	Bulgaria
+VAR	Varna	Bulgaria
+BWK	Brac	Croatia
+DBV	Dubrovnik	Croatia
+OSI	Osijek	Croatia
+PUY	Pula	Croatia
+RJK	Rijeka	Croatia
+SPU	Split	Croatia
+ZAD	Zadar	Croatia
+ZAG	Zagreb	Croatia
+LCA	Larnaca	Cyprus
+ECN	Nicosia	Cyprus
+PFO	Paphos	Cyprus
+OSR	Ostrava	Czech Republic
+PRG	Prague	Czech Republic
+BRQ	Turany	Czech Republic
+AAL	Aalborg	Denmark
+AAR	Aarhus	Denmark
+BLL	Billund	Denmark
+CPH	Copenhagen	Denmark
+EBJ	Esbjerg	Denmark
+KRP	Karup	Denmark
+RNN	Ronne	Denmark
+SGD	Soenderborg	Denmark
+KDL	ArmariAirForceBase	Estonia
+URE	Kuressaare	Estonia
+EPU	Parnu	Estonia
+TLL	Lennart Meri Tallinn	Estonia
+TAY	Tartu	Estonia
+FAE	Vagar	Faroe Islands
+HEL	Helsinki	Finland
+IVL	Ivalo	Finland
+JOE	Joensuu	Finland
+JYV	Jyvaskyla	Finland
+KAJ	Kajaani	Finland
+KEM	Kemi	Finland
+KTT	Kittila	Finland
+KOK	Kruunupyy	Finland
+KUO	Kuopio	Finland
+KAO	Kuusamo	Finland
+LPP	Lappeenranta	Finland
+OUL	Oulu	Finland
+POR	Pori	Finland
+RVN	Rovaniemi	Finland
+SVL	Savonlinna	Finland
+SJY	Seinäjoki/Ilmajoki	Finland
+TMP	Tampere	Finland
+TKU	Turku	Finland
+VAA	Vaasa	Finland
+VRK	Varkaus	Finland
+AGF	Agen	France
+AJA	Ajaccio	France
+NCY	Annecy	France
+AUR	Aurillac	France
+AVN	Avignon	France
+BIA	Bastia	France
+BVA	Beauvais	France
+EGC	Bergerac	France
+BZR	Beziers	France
+BIQ	Biarritz-bayonne	France
+BOD	Bordeaux	France
+BES	Brest	France
+BVE	Brive	France
+CLY	Calvi	France
+CCF	Carcassonne	France
+DCM	Castres	France
+XCR	Chalons Vatry	France
+CFE	Clermont-Ferrand	France
+DOL	Deauville	France
+DNR	Dinard	France
+FSC	Figari	France
+GNB	Grenoble	France
+TLN	Hyeres	France
+LTT	LaMôle	France
+LAI	Lannion	France
+LRH	La Rochelle	France
+LEH	Le Havre	France
+LIL	Lille	France
+LIG	Limoges	France
+LRT	Lorient	France
+LYS	Lyon	France
+MRS	Marseille	France
+ETZ	Metz	France
+MPL	Montpellier	France
+MLH	Mulhouse	France
+NTE	Nantes	France
+NCE	Nice	France
+FNI	Nimes	France
+ORY	Paris	France
+CDG	Paris	France
+PUF	Pau	France
+PGF	Perpignan	France
+PIS	Poitiers	France
+UIP	Quimper	France
+RNS	Rennes	France
+RDZ	Rodez	France
+EBU	St.-Etienne	France
+SNR	St.-Nazaire	France
+SXB	Strassbourg	France
+LDE	Tarbes	France
+TLS	Toulouse	France
+TUF	Tours	France
+BUS	Batumi	Georgia
+KUT	Kutaisi	Georgia
+TBS	Tbilisi	Georgia
+AOC	Altenburg	Germany
+SXF	Berlin	Germany
+TXL	Berlin	Germany
+BWE	Braunschweig	Germany
+BRE	Bremen	Germany
+CGN	Cologne	Germany
+DTM	Dortmund	Germany
+DRS	Dresden	Germany
+DUS	Duesseldorf	Germany
+ERF	Erfurt	Germany
+FRA	Frankfurt	Germany
+FDH	Friedrichshafen	Germany
+HHN	Hahn	Germany
+HAM	Hamburg	Germany
+HAJ	Hannover	Germany
+HGL	Helgoland	Germany
+HDF	Heringsdorf	Germany
+HOQ	Hof	Germany
+JUI	Juist	Germany
+FKB	Karlsruhe-Baden	Germany
+RLG	Laage	Germany
+LEJ	Leipzig	Germany
+LBC	Luebeck	Germany
+MHG	Mannheim	Germany
+FMM	Memmingen	Germany
+FMO	Muenster Osnabrueck	Germany
+MUC	Munich	Germany
+NUE	Nuernberg	Germany
+PAD	Paderborn	Germany
+SCN	Saarbruecken	Germany
+STR	Stuttgart	Germany
+NRN	Weeze	Germany
+GWT	Westerland	Germany
+ZQW	Zweibruecken	Germany
+GIB	Gibraltar	Gibraltar
+AXD	Alexandroupolis	Greece
+JTY	Astypalaia	Greece
+ATH	Athens	Greece
+CHQ	Chania	Greece
+JKH	Chios	Greece
+JNX	Cyclades Islands	Greece
+HER	Heraklion	Greece
+JIK	Ikaria	Greece
+IOA	Ioannina	Greece
+KLX	Kalamata	Greece
+JKL	Kalymnos	Greece
+AOK	Karpathos	Greece
+KSJ	Kasos	Greece
+KZS	Kastelorizo	Greece
+KSO	Kastoria	Greece
+KVA	Kavala	Greece
+EFL	Keffallinia	Greece
+CFU	Kerkyra/Corfu	Greece
+KIT	Kithira	Greece
+KGS	Kos	Greece
+KZI	Kozani	Greece
+LRS	Leros	Greece
+LXS	Limnos	Greece
+MLO	Milos	Greece
+JMK	Mykonos	Greece
+MJT	Mytilini	Greece
+VOL	Nea Anghialos	Greece
+PAS	Paros	Greece
+GPA	Patras	Greece
+PVK	Preveza	Greece
+RHO	Rhodos	Greece
+SMI	Samos	Greece
+JTR	Santorini	Greece
+JSH	Sitia	Greece
+JSI	Skiathos	Greece
+JSY	Syros Island	Greece
+SKG	Thessaloniki	Greece
+ZTH	Zakynthos	Greece
+GOH	Godthaab	Greenland
+UAK	Narssarssuaq	Greenland
+SFJ	Sondrestrom	Greenland
+ACI	Alderney	Guernsey
+GCI	Guernsey	Guernsey
+BUD	Budapest	Hungary
+SOB	Sármellék	Hungary
+AEY	Akureyri	Iceland
+EGS	Egilsstadir	Iceland
+IFJ	Isafjordur	Iceland
+KEF	Keflavik	Iceland
+RKV	Reykjavik	Iceland
+NOC	Connaught	Ireland
+ORK	Cork	Ireland
+CFN	Dongloe	Ireland
+DUB	Dublin	Ireland
+GWY	Galway	Ireland
+KIR	Kerry	Ireland
+WST	Leixlip	Ireland
+SNN	Shannon	Ireland
+SXL	Sligo	Ireland
+WAT	Waterford	Ireland
+IOM	Isle Of Man	Isle of Man
+AHO	Alghero	Italy
+AOI	Ancona	Italy
+BRI	Bari	Italy
+BGY	Bergamo	Italy
+BLQ	Bologna	Italy
+BZO	Bolzano	Italy
+BDS	Brindisi	Italy
+CAG	Cagliari	Italy
+CTA	Catania	Italy
+CRV	Crotone	Italy
+FLR	Firenze	Italy
+FOG	Foggia	Italy
+FRL	Forli	Italy
+GOA	Genoa	Italy
+SUF	Lamezia	Italy
+LMP	Lampedusa	Italy
+CUF	Levaldigi	Italy
+EBA	Marina Di Campo	Italy
+LIN	Milan	Italy
+MXP	Milano	Italy
+VBS	Montichiari	Italy
+NAP	Naples	Italy
+OLB	Olbia	Italy
+PMO	Palermo	Italy
+PNL	Pantelleria	Italy
+PMF	Parma	Italy
+PEG	Perugia	Italy
+PSR	Pescara	Italy
+PSA	Pisa	Italy
+REG	Reggio Calabria	Italy
+RMI	Rimini	Italy
+FCO	Rome	Italy
+CIA	Rome	Italy
+TRS	Ronchi De Legionari	Italy
+TRN	Torino	Italy
+TTB	Tortoli	Italy
+TPS	Trapani	Italy
+TQR	Tremiti Islands	Italy
+TSF	Treviso	Italy
+VCE	Venice	Italy
+VRN	Villafranca/Verona	Italy
+JER	Jersey	Jersey
+RIX	Riga	Latvia
+KUN	Kaunas	Lithuania
+PLQ	Palanga	Lithuania
+VNO	Vilnius	Lithuania
+LUX	Luxemburg	Luxembourg
+OHD	Ohrid	Macedonia
+SKP	Skopje	Macedonia
+MLA	Malta	Malta
+KIV	Chișinău	Moldova
+MCM	Monaco	Monaco
+TGD	Podgorica	Montenegro
+TIV	Tivat	Montenegro
+AMS	Amsterdam	Netherlands
+EIN	Eindhoven	Netherlands
+GRQ	Groningen	Netherlands
+MST	Maastricht	Netherlands
+RTM	Rotterdam	Netherlands
+AES	Alesund	Norway
+ALF	Alta	Norway
+ANX	Andoya	Norway
+BDU	Bardufoss	Norway
+BJF	Batsfjord	Norway
+BGO	Bergen	Norway
+BVG	Berlevag	Norway
+BOO	Bodo	Norway
+BNN	Bronnoysund	Norway
+VDB	Fagernes	Norway
+FRO	Floro	Norway
+FDE	Forde	Norway
+HFT	Hammerfest	Norway
+EVE	Harstad/Narvik	Norway
+HAA	Hasvik	Norway
+HAU	Haugesund	Norway
+HVG	Honningsvag	Norway
+KKN	Kirkenes	Norway
+KRS	Kristiansand	Norway
+KSU	Kristiansund	Norway
+LKL	Lakselv	Norway
+LKN	Leknes	Norway
+MEH	Mehamn	Norway
+MQN	Mo I Rana	Norway
+MOL	Molde	Norway
+MJF	Mosjoen	Norway
+OSY	Namsos	Norway
+NVK	Narvik	Norway
+OLA	Orland	Norway
+HOV	Orsta-Volda	Norway
+OSL	Oslo	Norway
+RRS	Roros	Norway
+RVK	Rørvik	Norway
+RYG	Rygge	Norway
+SDN	Sandane	Norway
+TRF	Sandefjord	Norway
+SSJ	Sandnessjoen	Norway
+SKE	Skien	Norway
+SOG	Sogndal	Norway
+SVG	Stavanger	Norway
+SKN	Stokmarknes	Norway
+SRP	Stord	Norway
+LYR	Svalbard	Norway
+SVJ	Svolvær	Norway
+TOS	Tromso	Norway
+TRD	Trondheim	Norway
+VDS	Vadso	Norway
+VRY	Værøy	Norway
+VAW	Vardø	Norway
+BZG	Bydgoszcz	Poland
+GDN	Gdansk	Poland
+KTW	Katowice	Poland
+KRK	Krakow	Poland
+LCJ	Lodz	Poland
+POZ	Poznan	Poland
+RZE	Rzeszow	Poland
+SZZ	Szczechin	Poland
+WAW	Warsaw	Poland
+WRO	Wroclaw	Poland
+IEG	Zielona Gora	Poland
+CVU	Corvo	Portugal
+FAO	Faro	Portugal
+FLW	Flores	Portugal
+FNC	Funchal	Portugal
+GRW	Graciosa Island	Portugal
+HOR	Horta	Portugal
+TER	Lajesterceira Island	Portugal
+LIS	Lisbon	Portugal
+PIX	Pico	Portugal
+PDL	Ponta Delgada	Portugal
+OPO	Porto	Portugal
+PXO	Porto Santo	Portugal
+SMA	Santa Maria Island	Portugal
+SJZ	Sao Jorge Island	Portugal
+ARW	Arad	Romania
+BCM	Bacau	Romania
+BAY	BaiaMare	Romania
+BBU	Bucharest	Romania
+OTP	Bucharest	Romania
+CLJ	Cluj-Napoca	Romania
+CND	Constanta	Romania
+CRA	Craiova	Romania
+IAS	Iasi	Romania
+OMR	Oradea	Romania
+SUJ	SatuMare	Romania
+SBZ	Sibiu	Romania
+SCV	Suceava	Romania
+TSR	Timisoara	Romania
+TGM	TirguMures	Romania
+BEG	Beograd	Serbia
+INI	Nis	Serbia
+PRN	Pristina	Serbia
+BTS	Bratislava	Slovakia
+KSC	Kosice	Slovakia
+TAT	Poprad	Slovakia
+ILZ	Žilina	Slovakia
+LJU	Ljubliana	Slovenia
+POW	Portoroz	Slovenia
+ALC	Alicante	Spain
+LEI	Almeria	Spain
+OVD	Aviles	Spain
+BJZ	Badajoz	Spain
+BCN	Barcelona	Spain
+BIO	Bilbao	Spain
+RGS	Burgos	Spain
+JCU	Ceuta	Spain
+CQM	Ciudad Real	Spain
+FUE	Fuerteventura	Spain
+GRO	Gerona	Spain
+GRX	Granada	Spain
+LPA	Gran Canaria	Spain
+VDE	Hierro	Spain
+IBZ	Ibiza	Spain
+XRY	Jerez	Spain
+LCG	LaCoruna	Spain
+ACE	Lanzerote	Spain
+LEN	Leon	Spain
+ILD	Lleida-Alguaire	Spain
+ABC	Los Llanos	Spain
+MAD	Madrid	Spain
+AGP	Malaga	Spain
+MLN	Melilla	Spain
+MAH	Menorca	Spain
+MJV	Murcia	Spain
+PMI	Palma de Mallorca	Spain
+PNA	Pamplona	Spain
+REU	Reus	Spain
+SLM	Salamanca	Spain
+EAS	SanSebastian	Spain
+SPC	Santa Cruz De La Palma	Spain
+SDR	Santander	Spain
+SCQ	Santiago	Spain
+SVQ	Sevilla	Spain
+TFN	Tenerife	Spain
+TFS	Tenerife	Spain
+VLC	Valencia	Spain
+VLL	Valladolid	Spain
+VGO	Vigo	Spain
+VIT	Vitoria	Spain
+ZAZ	Zaragoza	Spain
+AGH	Ängelholm	Sweden
+AJR	Arvidsjaur	Sweden
+BLE	Borlange	Sweden
+GEV	Gallivare	Sweden
+GSE	Gothenborg City	Sweden
+GOT	Gothenborg-Landvetter	Sweden
+HFS	Hagfors	Sweden
+HAD	Halmstad	Sweden
+HMV	Hemavan	Sweden
+JKG	Joenkoeping	Sweden
+KLR	Kalkmar	Sweden
+KRN	Kiruna	Sweden
+KRF	Kramfors	Sweden
+KID	Kristianstad	Sweden
+LPI	Linkoeping	Sweden
+LLA	Lulea	Sweden
+LYC	Lycksele	Sweden
+MMX	Malmoe	Sweden
+SQO	Mohed	Sweden
+MXX	Mora	Sweden
+NRK	Norrkoeping	Sweden
+ORB	Orebro	Sweden
+OER	Ornskoldsvik	Sweden
+OSK	Oskarshamn	Sweden
+OSD	Östersund	Sweden
+RNB	Ronneby	Sweden
+SFT	Skelleftea	Sweden
+ARN	Stockholm-Arlanda	Sweden
+BMA	Stockholm-Bromma	Sweden
+NYO	Stockholm-Skavsta	Sweden
+SDL	Sundsvall	Sweden
+EVG	Sveg	Sweden
+TYF	Torsby	Sweden
+THN	Trollhattan	Sweden
+UME	Umea	Sweden
+VST	Vasteras	Sweden
+VXO	Vaxjo	Sweden
+VHM	Vilhelmina	Sweden
+VBY	Visby	Sweden
+ACH	Altenrhein	Switzerland
+BSL	Basel-Mulhouse-Freiburg	Switzerland
+BRN	Bern	Switzerland
+GVA	Geneva	Switzerland
+LUG	Lugano	Switzerland
+ZRH	Zurich	Switzerland
+ADA	Adana	Turkey
+ESB	Ankara	Turkey
+AYT	Antalya	Turkey
+BAL	Batman	Turkey
+BJV	Bodrum	Turkey
+CKZ	Canakkale	Turkey
+TEQ	Çorlu	Turkey
+DLM	Dalaman	Turkey
+DIY	Diyabakir	Turkey
+EZS	Elazig	Turkey
+ERC	Erzincan	Turkey
+ERZ	Erzurum	Turkey
+AOE	Eskissehir	Turkey
+GZT	Gaziantep	Turkey
+HTY	Hatay	Turkey
+ISE	Isparta	Turkey
+IST	Istanbul Ataturk	Turkey
+SAW	Istanbul Gökçen	Turkey
+ADB	Izmir	Turkey
+KSY	Kars	Turkey
+ASR	Kayseri	Turkey
+KYA	Konya	Turkey
+MLX	Malatya	Turkey
+MZH	Merzifon	Turkey
+MSR	Mus	Turkey
+NAV	Nevsehir	Turkey
+SZF	Samsun	Turkey
+GNY	Sanliurfa	Turkey
+SIC	Sinop	Turkey
+VAS	Sivas	Turkey
+TZX	Trabzon	Turkey
+USQ	Usak	Turkey
+VAN	Van	Turkey
+UKS	Belbek	Ukraine
+CWC	Chernovtsk	Ukraine
+DNK	Dnepropetrovsk	Ukraine
+DOK	Donetsk	Ukraine
+IFO	Ivano-Frankivsk	Ukraine
+HRK	Kharkov	Ukraine
+IEV	Kiev	Ukraine
+KBP	Kiev	Ukraine
+LWO	Lvov	Ukraine
+ODS	Odessa	Ukraine
+SIP	Simferopol	Ukraine
+UDJ	Uzhgorod	Ukraine
+ABZ	Aberdeen	United Kingdom
+BRR	Barra	United Kingdom
+BFS	Belfast	United Kingdom
+BHD	Belfast	United Kingdom
+BEB	Benbecula	United Kingdom
+BHX	Birmingham	United Kingdom
+BLK	Blackpool	United Kingdom
+BOH	Bournemouth	United Kingdom
+BRS	Bristol	United Kingdom
+CAL	Campbeltown	United Kingdom
+CWL	Cardiff	United Kingdom
+DSA	Doncaster, Sheffield	United Kingdom
+DND	Dundee	United Kingdom
+EMA	East Midlands	United Kingdom
+EOI	Eday	United Kingdom
+EDI	Edinburgh	United Kingdom
+EXT	Exeter	United Kingdom
+GLA	Glasgow	United Kingdom
+GLO	Glouchestershire	United Kingdom
+HUY	Humberside	United Kingdom
+INV	Inverness	United Kingdom
+ILY	Islay	United Kingdom
+KOI	Kirkwall	United Kingdom
+LBA	Leeds	United Kingdom
+LPL	Liverpool	United Kingdom
+LHR	London-Heathrow	United Kingdom
+LTN	London-Luton	United Kingdom
+STN	London-Stansted	United Kingdom
+LCY	London-City	United Kingdom
+LGW	London-Gatwick	United Kingdom
+LDY	Londonderry	United Kingdom
+MAN	Manchester	United Kingdom
+MSE	Manston	United Kingdom
+NCL	Newcastle	United Kingdom
+NQY	Newquai	United Kingdom
+NRL	NorthRonaldsay	United Kingdom
+NWI	Norwich	United Kingdom
+PPW	PapaWestray	United Kingdom
+PZE	Penzance	United Kingdom
+PLH	Plymouth	United Kingdom
+PIK	Prestwick	United Kingdom
+NDY	Sanday	United Kingdom
+SOU	Southampton	United Kingdom
+SEN	Southend	United Kingdom
+ISC	St Mary’s	United Kingdom
+SYY	Stornoway	United Kingdom
+SOY	Stronsay	United Kingdom
+LSI	Sumburgh	United Kingdom
+MME	Durham Tees Valley	United Kingdom
+TRE	Tiree	United Kingdom
+TSO	Tresco	United Kingdom
+VLY	Valley Holyhead	United Kingdom
+WRY	Westray	United Kingdom
+WIC	Wick	United Kingdom
