@@ -1,9 +1,8 @@
-import requests
 import re
 from iata import get_relations
 from scraper import Page
 from bs4 import BeautifulSoup
-
+import wizz_requests
 
 class WizzairPage(Page):		
 	
@@ -15,66 +14,52 @@ class WizzairPage(Page):
 		
 	def get_flights(self, origin, destination, departure_date, return_date):
 		headers = {
-			"User-Agent": "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.111 Safari/537.36",
+			"User-Agent": "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36",
 			"Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
-			"Accept-Encoding": "gzip, deflate, sdch",
+			"Accept-Encoding": "gzip, deflate",
 			"Cache-Control": "max-age=0",
-			"Accept-Language": "pl-PL,pl;q=0.8,en-US;q=0.6,en;q=0.4",
-			"Pragma": "no-cache"
+			"Accept-Language": "pl-PL,pl;q=0.8,en-US;q=0.6,en;q=0.4"
 		}
-		r = requests.get("https://wizzair.com/pl-PL/Search",headers=headers, verify=False)
+		r = wizz_requests.get("https://wizzair.com/pl-PL/Search",headers=headers)
 		session_id = r.cookies["ASP.NET_SessionId"]
 
 		found = re.findall("<input id=\"viewState\" type=\"hidden\" value=\"(.*?)\" name=\"viewState\"><input type=\"hidden\" name=\"pageToken\" value=\"\"><input name=\"(.*?)\" type=\"hidden\" value=\"(.*?)\">", r.content)
 		(view_state, name, value) = found[0]
-
-		"""payload = {
-			"__EVENTTARGET":"ControlGroupRibbonAnonHomeView_AvailabilitySearchInputRibbonAnonHomeView_ButtonSubmit",
-			"__VIEWSTATE":view_state,
-			name: value,
-			"ControlGroupRibbonAnonHomeView$AvailabilitySearchInputRibbonAnonHomeView$ButtonSubmit":"Szukaj",
-			"ControlGroupRibbonAnonHomeView$AvailabilitySearchInputRibbonAnonHomeView$DepartureDate": departure_date,
-			"ControlGroupRibbonAnonHomeView$AvailabilitySearchInputRibbonAnonHomeView$DestinationStation": destination,
-			"ControlGroupRibbonAnonHomeView$AvailabilitySearchInputRibbonAnonHomeView$OriginStation": origin,
-			"ControlGroupRibbonAnonHomeView$AvailabilitySearchInputRibbonAnonHomeView$PaxCountADT":	"1",
-			"ControlGroupRibbonAnonHomeView$AvailabilitySearchInputRibbonAnonHomeView$PaxCountCHD":	"0",
-			"ControlGroupRibbonAnonHomeView$AvailabilitySearchInputRibbonAnonHomeView$PaxCountINFANT":"0",
-			"ControlGroupRibbonAnonHomeView$AvailabilitySearchInputRibbonAnonHomeView$ReturnDate": return_date,
-			"cookiePolicyDismissed":"true"
-		}"""
 		
 		payload = {
-			"__EVENTTARGET": "HeaderControlGroupRibbonSelectView_AvailabilitySearchInputRibbonSelectView_ButtonSubmit",
+			"__EVENTTARGET": "ControlGroupRibbonAnonHomeView_AvailabilitySearchInputRibbonAnonHomeView_ButtonSubmit",
 			"__VIEWSTATE": view_state,
 			name: value,
-			"HeaderControlGroupRibbonSelectView$AvailabilitySearchInputRibbonSelectView$OriginStation": origin,
-			"HeaderControlGroupRibbonSelectView$AvailabilitySearchInputRibbonSelectView$DestinationStation": destination,
-			"HeaderControlGroupRibbonSelectView$AvailabilitySearchInputRibbonSelectView$DepartureDate": departure_date,
-			"HeaderControlGroupRibbonSelectView$AvailabilitySearchInputRibbonSelectView$ReturnDate": return_date,
-			"HeaderControlGroupRibbonSelectView$AvailabilitySearchInputRibbonSelectView$PaxCountADT": "1",
-			"HeaderControlGroupRibbonSelectView$AvailabilitySearchInputRibbonSelectView$PaxCountCHD": "0",
-			"HeaderControlGroupRibbonSelectView$AvailabilitySearchInputRibbonSelectView$PaxCountINFANT": "0",
+			"ControlGroupRibbonAnonHomeView$AvailabilitySearchInputRibbonAnonHomeView$OriginStation": origin,
+			"ControlGroupRibbonAnonHomeView$AvailabilitySearchInputRibbonAnonHomeView$DestinationStation": destination,
+			"ControlGroupRibbonAnonHomeView$AvailabilitySearchInputRibbonAnonHomeView$DepartureDate": departure_date,
+			"ControlGroupRibbonAnonHomeView$AvailabilitySearchInputRibbonAnonHomeView$ReturnDate": return_date,
+			"ControlGroupRibbonAnonHomeView$AvailabilitySearchInputRibbonAnonHomeView$PaxCountADT": "1",
+			"ControlGroupRibbonAnonHomeView$AvailabilitySearchInputRibbonAnonHomeView$PaxCountCHD": "0",
+			"ControlGroupRibbonAnonHomeView$AvailabilitySearchInputRibbonAnonHomeView$PaxCountINFANT": "0",
 			"WizzSummaryDisplaySelectViewRibbonSelectView$PaymentCurrencySelector": "00000000-0000-0000-0000-000000000000FULL",
-			"HeaderControlGroupRibbonSelectView$AvailabilitySearchInputRibbonSelectView$ButtonSubmit": "Szukaj"
+			"ControlGroupRibbonAnonHomeView$AvailabilitySearchInputRibbonAnonHomeView$ButtonSubmit": "Szukaj"
 		}
 		cookies = {
 			"ASP.NET_SessionId":session_id,
 			"HomePageSelector":"Search",
 			"Culture": "pl-PL",
 			"cookiesAccepted": "true",
-			"__gfp_64b":"pcuFtDJYzOFyuk.7PjmKNZZ2CKjLOUhWSEO7mWj3jXj.f7",
 			"cookie_settings": "necessary=1,functionality=1,performance=1,advertising=1",
-			"_ga":"GA1.2.501621162.1417392908",
-			"_gat":"1",
-			"gr_reco": "14a7f0d5dba-d12320d32f43868a"
+			"__gfp_64b": "b4Yly7qyawVBDu2LJEPxcsCkGqxZdb20d2VbT6wkhvn.97",  
+			"gr_reco": "14a9665ba98-1c2fd5e86cc38687", 
+			"_ga": "GA1.2.1551744465.1419862456",
+			"_gat":"1"
 		}
 		
+		post_url = "https://wizzair.com/pl-PL/Search"
+		
 		headers["Origin"] = "https://wizzair.com"
-		headers["Referer"] = "https://wizzair.com/pl-PL/Search"
+		headers["Referer"] = post_url
 	
 		
 		#r = requests.post("http://wizzair.com/pl-PL/Search", headers=headers, cookies=cookies, data=payload, verify=False)
-		r = requests.post("https://wizzair.com/pl-PL/Select", headers=headers, cookies=cookies, data=payload, verify=False)
+		r = wizz_requests.post(post_url, headers=headers, cookies=cookies, data=payload)
 		return self.parse_search_doc(r.content)
 
 	def parse_sticky_head(self, sticky_head):
@@ -118,5 +103,16 @@ class WizzairPage(Page):
 
 if __name__ == "__main__":
 	w = WizzairPage()
-	#w.turn_adapter_on()
+	#http_proxy  = "http://proxy-chain.intel.com:911"
+	#https_proxy = "https://proxy-chain.intel.com:912"
+	https_proxy = http_proxy  = "localhost:8888"
+	wizz_requests.proxy_dict = { 
+		"http"  : http_proxy, 
+		"https" : https_proxy
+	}
+	
+
+	
+	wizz_requests.ssl_check_off = True
+	
 	w.get_flights("GDN", "AES", "2015-01-10", "2015-01-11")
