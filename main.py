@@ -8,31 +8,32 @@ logger = logging.getLogger("scrapper")
 logging.basicConfig()
 
 class Runner:
-	def __init__(self, threads):
-		self.threads = threads
+	def __init__(self):
 		self.clients = [RyanPage, WizzairPage, EasyjetPage]
+		
 		self.failed = []
-	def start(self):
+	def start(self, threads):
 		logger.setLevel(logging.INFO)
-		date = datetime.date(2015, 4, 26)
+		date = datetime.date(2015, 2, 1)
 		
 		
 		#clients= [RyanPage]
-		for i in range(0, 31, 5):
+		for i in range(0, 30, 5):
 			departure_date = date.isoformat()
 			date = date + datetime.timedelta(days=5)
 			return_date = date.isoformat()
 			
 			for client in self.clients:
-				c = client(self)
-				c.run("GDN", departure_date, return_date)
+				c = client()
+				c.run(threads, "GDN", departure_date, return_date)
 		
 		with open("failed.log", "w") as file:
 			for f in self.failed:
 				file.write(",".join([str(x) for x in f] ) +"\n")
 				
 if __name__ == "__main__":
-	r = Runner(20)
-	r.start()
-			
+	r = Runner()
+	r.start(30)
+	#x = EasyjetPage()	
+	#x.debug()
 		

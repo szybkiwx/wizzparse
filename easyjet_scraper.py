@@ -11,8 +11,6 @@ import logging
 logger = logging.getLogger("scrapper")
 
 class EasyjetPage(Page):
-	def __init__(self, runner):
-		Page.__init__(self, runner)
 		
 	def get_carrier(self):
 		return "EasyJet"
@@ -45,9 +43,9 @@ class EasyjetPage(Page):
 		soup = BeautifulSoup(r.text)
 		
 		slider = soup.find("div", {"class":"OutboundDaySlider"})
-		result["first"] = list(self.process_slider(slider, departure_date, return_date))
+		result["first"] = list(self.process_slider(slider, departure_date, return_date)) if slider is not None else []
 		slider = soup.find("div", {"class":"ReturnDaySlider"})
-		result["second"] = list(self.process_slider(slider, departure_date, return_date))
+		result["second"] = list(self.process_slider(slider, departure_date, return_date)) if slider is not None else []
 		return result
 
 		
@@ -65,4 +63,5 @@ class EasyjetPage(Page):
 						"arrival": "%sT%s:00" % (return_date, arr.find_all("span")[2].string),
 						"price": "%s.%s" %(price_span.contents[0].strip(), second_part)
 					}
-	
+	def debug(self):
+		print self.get_flights("EDI", "TFS", "2015-10-01", "2015-10-05")

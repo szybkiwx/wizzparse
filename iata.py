@@ -4,3 +4,7 @@ dest_graph = [{"DS":"AES","ASL":[{"SC":"GDN","OSD":"\/Date(1416268800000)\/"},{"
 
 def get_relations(start):
 	return next(([x["SC"] for x in entry["ASL"]] for entry in dest_graph if entry["DS"] == start), [])
+	
+if __name__ == "__main__":
+	print get_relations("GDN")
+	print get_relations("WAW")

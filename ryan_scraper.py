@@ -19,9 +19,8 @@ requests_log.setLevel(logging.DEBUG)
 requests_log.propagate = True"""
 
 class RyanPage(Page):
-	def __init__(self, runner):
+	def __init__(self):
 		self._session_id = None
-		Page.__init__(self, runner)
 		
 	def get_carrier(self):
 		return "RyanAir"

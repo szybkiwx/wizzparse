@@ -2813,5 +2813,10 @@
         "city": "Hahn", 
         "code": "HHN", 
         "country": "Germany"
+    },
+	"WMI": {
+        "city": "Warsaw Modlin", 
+        "code": "WMI", 
+        "country": "Poland"
     }
 }

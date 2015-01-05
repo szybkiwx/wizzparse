@@ -4,10 +4,9 @@ from iata import get_relations
 from scraper import Page
 from bs4 import BeautifulSoup
 
+
 class WizzairPage(Page):		
-	def __init__(self, runner):
-		Page.__init__(self, runner)
-		
+	
 	def get_relations(self, start):
 		return get_relations(start)
 
@@ -19,17 +18,17 @@ class WizzairPage(Page):
 			"User-Agent": "Mozilla/5.0 (Windows NT 6.3; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/38.0.2125.111 Safari/537.36",
 			"Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8",
 			"Accept-Encoding": "gzip, deflate, sdch",
-			"Cache-Control": "no-cache",
+			"Cache-Control": "max-age=0",
 			"Accept-Language": "pl-PL,pl;q=0.8,en-US;q=0.6,en;q=0.4",
 			"Pragma": "no-cache"
 		}
-		r = requests.get("http://wizzair.com/pl-PL/Search",headers=headers)
+		r = requests.get("https://wizzair.com/pl-PL/Search",headers=headers, verify=False)
 		session_id = r.cookies["ASP.NET_SessionId"]
 
 		found = re.findall("<input id=\"viewState\" type=\"hidden\" value=\"(.*?)\" name=\"viewState\"><input type=\"hidden\" name=\"pageToken\" value=\"\"><input name=\"(.*?)\" type=\"hidden\" value=\"(.*?)\">", r.content)
 		(view_state, name, value) = found[0]
 
-		payload = {
+		"""payload = {
 			"__EVENTTARGET":"ControlGroupRibbonAnonHomeView_AvailabilitySearchInputRibbonAnonHomeView_ButtonSubmit",
 			"__VIEWSTATE":view_state,
 			name: value,
@@ -42,22 +41,40 @@ class WizzairPage(Page):
 			"ControlGroupRibbonAnonHomeView$AvailabilitySearchInputRibbonAnonHomeView$PaxCountINFANT":"0",
 			"ControlGroupRibbonAnonHomeView$AvailabilitySearchInputRibbonAnonHomeView$ReturnDate": return_date,
 			"cookiePolicyDismissed":"true"
+		}"""
+		
+		payload = {
+			"__EVENTTARGET": "HeaderControlGroupRibbonSelectView_AvailabilitySearchInputRibbonSelectView_ButtonSubmit",
+			"__VIEWSTATE": view_state,
+			name: value,
+			"HeaderControlGroupRibbonSelectView$AvailabilitySearchInputRibbonSelectView$OriginStation": origin,
+			"HeaderControlGroupRibbonSelectView$AvailabilitySearchInputRibbonSelectView$DestinationStation": destination,
+			"HeaderControlGroupRibbonSelectView$AvailabilitySearchInputRibbonSelectView$DepartureDate": departure_date,
+			"HeaderControlGroupRibbonSelectView$AvailabilitySearchInputRibbonSelectView$ReturnDate": return_date,
+			"HeaderControlGroupRibbonSelectView$AvailabilitySearchInputRibbonSelectView$PaxCountADT": "1",
+			"HeaderControlGroupRibbonSelectView$AvailabilitySearchInputRibbonSelectView$PaxCountCHD": "0",
+			"HeaderControlGroupRibbonSelectView$AvailabilitySearchInputRibbonSelectView$PaxCountINFANT": "0",
+			"WizzSummaryDisplaySelectViewRibbonSelectView$PaymentCurrencySelector": "00000000-0000-0000-0000-000000000000FULL",
+			"HeaderControlGroupRibbonSelectView$AvailabilitySearchInputRibbonSelectView$ButtonSubmit": "Szukaj"
 		}
-
 		cookies = {
 			"ASP.NET_SessionId":session_id,
 			"HomePageSelector":"Search",
 			"Culture": "pl-PL",
 			"cookiesAccepted": "true",
-			"__gfp_64b":"XPK3pghaNyGXZac.lTOwiY52hQedHWBeHDTS8.Q7o2H.w7",
-			"cookie_settings": "necessary=1,functionality=1,performance=1,advertising=1"
+			"__gfp_64b":"pcuFtDJYzOFyuk.7PjmKNZZ2CKjLOUhWSEO7mWj3jXj.f7",
+			"cookie_settings": "necessary=1,functionality=1,performance=1,advertising=1",
+			"_ga":"GA1.2.501621162.1417392908",
+			"_gat":"1",
+			"gr_reco": "14a7f0d5dba-d12320d32f43868a"
 		}
 		
-		headers["Origin"] = "http://wizzair.com"
-		headers["Referer"] = "http://wizzair.com/pl-PL/Search"
+		headers["Origin"] = "https://wizzair.com"
+		headers["Referer"] = "https://wizzair.com/pl-PL/Search"
 	
 		
-		r = requests.post("http://wizzair.com/pl-PL/Search", headers=headers, cookies=cookies, data=payload)
+		#r = requests.post("http://wizzair.com/pl-PL/Search", headers=headers, cookies=cookies, data=payload, verify=False)
+		r = requests.post("https://wizzair.com/pl-PL/Select", headers=headers, cookies=cookies, data=payload, verify=False)
 		return self.parse_search_doc(r.content)
 
 	def parse_sticky_head(self, sticky_head):
@@ -98,3 +115,8 @@ class WizzairPage(Page):
 			"second":  self.parse_sticky_head(sticky_heads[1]),
 			"currency":found[0]
 		}
+
+if __name__ == "__main__":
+	w = WizzairPage()
+	#w.turn_adapter_on()
+	w.get_flights("GDN", "AES", "2015-01-10", "2015-01-11")
