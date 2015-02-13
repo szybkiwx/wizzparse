@@ -82,12 +82,14 @@ class Page:
 		#if hasattr(self.runner, "DEBUG") and self.runner.DEBUG == True:
 		
 		def insert(city):
-			try:
-				self.insert_flights(start, city, departure_date, return_date)
-			except Exception as e:
-				logger.error("An error occurred inserting flights:")
-				logger.exception(e) 
-				#self.runner.failed.append((start, city, departure_date, return_date, e))
+			for i in range(3):
+				try:
+					self.insert_flights(start, city, departure_date, return_date)
+					break
+				except Exception as e:
+					logger.error("An error occurred inserting flights:")
+					logger.exception(e) 
+					#self.runner.failed.append((start, city, departure_date, return_date, e))
 
 		xs = p.map(insert, first_jump)
 	

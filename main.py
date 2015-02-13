@@ -14,11 +14,11 @@ class Runner:
 		self.failed = []
 	def start(self, threads):
 		logger.setLevel(logging.INFO)
-		date = datetime.date(2015, 2, 1)
+		date = datetime.date(2015, 4, 25)
 		
 		
 		#clients= [RyanPage]
-		for i in range(0, 30, 5):
+		for i in [0, 5, 10]:
 			departure_date = date.isoformat()
 			date = date + datetime.timedelta(days=5)
 			return_date = date.isoformat()
