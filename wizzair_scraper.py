@@ -74,9 +74,9 @@ class WizzairPage(Page):
 			arrival = flight_date["data-flight-arrival"]
 			departure = flight_date["data-flight-departure"]
 			fare_span = flight_tooltip.find("span", {"class": "flight-fare"})
-			price = fare_span.find("span", {"class":"original"}).string
+			price = fare_span.find("span", {"class": "flight-fare-nowizzclub"}).find("span", {"class":"original"}).string
 
-			results.append( { "departure":departure, "arrival": arrival, "price": price.split()[0].replace(",", ".")} )
+			results.append( { "departure":departure, "arrival": arrival, "price": price.split()[0].replace(",", ".").replace("&nbsp;", "")} )
 		return results
 
 	def parse_search_doc(self, html_doc):

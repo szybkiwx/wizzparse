@@ -56,10 +56,10 @@ class Page:
 			price_pln = float(self.check_course(currency, "PLN")) * float(result["price"])
 			try:
 
-				cursor.execute("insert into flights (carrier, start, destination, departure, arrival, price, currency, price_pln) values (?, ?, ?, ?, ?, ?, ?, ?)", (self.get_carrier(), city_from, city_to, result["departure"], result["arrival"], result["price"], currency, price_pln))
+				cursor.execute("insert into flights (carrier, start, destination, departure, arrival, price, currency, price_pln, created, updated) values (?, ?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP)", (self.get_carrier(), city_from, city_to, result["departure"], result["arrival"], result["price"], currency, price_pln))
 			except sqlite3.IntegrityError:
 				logger.debug("flight already added")
-				cursor.execute("update flights set price=? where start=? and destination=? and departure=? and arrival=? ", (price_pln, city_from, city_to, result["departure"], result["arrival"]))
+				cursor.execute("update flights set price=?, price_pln=?,updated=CURRENT_TIMESTAMP where start=? and destination=? and departure=? and arrival=? ", ( result["price"], price_pln, city_from, city_to, result["departure"], result["arrival"]))
 			except sqlite3.Error as e:
 				logger.error("An error occurred:")
 				logger.exception(e) 
