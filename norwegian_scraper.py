@@ -10,12 +10,9 @@ import logging
 
 logger = logging.getLogger("scrapper")
 
-class EasyjetPage(Page):
-	def __init__(self, runner):
-		Page.__init__(self, runner)
-		
+class NorwegianPage(Page):
 	def get_carrier(self):
-		return "EasyJet"
+		return "Norwegian"
 
 	def get_relations(self, start):
 		return easy_iata.get_relations(start)

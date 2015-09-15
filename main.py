@@ -13,9 +13,9 @@ class Runner:
 		
 		self.failed = []
 	def start(self, threads):
-		logger.setLevel(logging.DEBUG)
-		date = datetime.date(2015, 4, 25)
-		for i in [0, 3, 6, 9, 12]:
+		logger.setLevel(logging.INFO)
+		date = datetime.date(2015, 10, 27)
+		for i in [0, 3, 6, 9]:
 			departure_date = date.isoformat()
 			date = date + datetime.timedelta(days=5)
 			return_date = date.isoformat()
@@ -30,7 +30,7 @@ class Runner:
 				
 if __name__ == "__main__":
 	r = Runner()
-	r.start(30)
+	r.start(10)
 	#x = EasyjetPage()	
 	#x.debug()
 		

@@ -3,9 +3,11 @@ import sqlite3
 import json
 import codecs
 from datetime import datetime, timedelta
-MAX_PRICE = 600
-MIN_DAYS = 3
-MAX_DAYS = 6
+MAX_PRICE = 500
+MIN_DAYS = 4
+MAX_DAYS = 8
+MIN_WAIT = 2
+MAX_WAIT=8
 print_long_report = True 
 
 with codecs.open("iata.json", encoding='utf-8') as f:
@@ -20,7 +22,7 @@ def run_joint_query(conn, start, end, start_time, end_time, max_price):
 	
 	q = """select  f1.start as start, f1.destination as middestination, f2.destination as destination, f1.departure departure, f2.arrival as arrival, f1.carrier as carrier_one, f2.carrier as carrier_two, f1.price_pln + f2.price_pln  as price2
 	from flights f1 
-	join flights f2 on f1.destination = f2.start and (strftime('%s', f2.departure) - strftime('%s', f1.arrival))/3600 between 3 and 8 
+	join flights f2 on f1.destination = f2.start and (strftime('%s', f2.departure) - strftime('%s', f1.arrival))/3600 between ? and ? 
 	where f1.departure >= ? and f1.arrival <= ?  
 	and price2 < ?
 	and f1.start=? """
@@ -30,7 +32,7 @@ def run_joint_query(conn, start, end, start_time, end_time, max_price):
 	
 	c = conn.cursor()
 	
-	c.execute(q, (datetime.strptime(start_time, "%Y-%m-%d"), datetime.strptime(end_time, "%Y-%m-%d"), max_price, start))
+	c.execute(q, (MIN_WAIT, MAX_WAIT, datetime.strptime( start_time, "%Y-%m-%d"), datetime.strptime(end_time, "%Y-%m-%d"), max_price, start))
 	return c.fetchall()
 
 def run_simple_query(conn, start, end, start_time, end_time, max_price):
@@ -52,20 +54,6 @@ def long_report(conn, destinations):
 	conn.executemany(q, destinations)
 	conn.commit()
 	
-def short_report(destinations, result_file):
-	f = codecs.open(result_file, encoding='utf-8', mode="w")
-	for country, dst in destinations.items():
-		f.write("============= ==============================\n")
-		f.write( country + "\n")
-		f.write( "===========================================\n")
-		for code, data in dst.items():
-			try:
-				f.write(mapping[code]["city"] + "\n")
-				
-			except  UnicodeDecodeError:
-				print code
-				raise
-		f.write("\n")	
 
 def to_datetime(string):
 	if len(string.split(":")) < 3:
@@ -119,7 +107,7 @@ def clean_row_single(row):
 	dst = row["destination"]
 	return [mapping[dst]["country"], mapping[dst]["city"], row["departure"], "", row["arrival"], row["carrier"], "", row["price2"]]
 	
-def main(start="GDN", end="", result_file="result.txt", start_time="1970-01-01", end_time="2035-01-01", single_only=False):		
+def main(start="GDN", end="", start_time="1970-01-01", end_time="2035-01-01", single_only=False):		
 	conn = sqlite3.connect('flights.db')
 	conn.row_factory = sqlite3.Row
 	destinations = []
@@ -127,15 +115,11 @@ def main(start="GDN", end="", result_file="result.txt", start_time="1970-01-01",
 	process_joint(conn, start, end, start_time, end_time, destinations)
 	process_single(conn, start, end, start_time, end_time, destinations)
 	
-	print "print result"
-	if print_long_report:
-		long_report(conn, destinations)
-	else:
-		short_report(destinations, result_file)
+	long_report(conn, destinations)
 	conn.close()
 
 if __name__ == "__main__":
-	start_time = "2015-04-25"
-	end_time = "2015-05-08"
-	main(start="GDN", end="", result_file="result.txt", start_time=start_time, end_time=end_time, single_only=False)
+	start_time = "2015-07-27"
+	end_time = "2015-08-09"
+	main(start="GDN", end="", start_time=start_time, end_time=end_time, single_only=False)
 	#main("BUD", "GDN", "result2.txt")
